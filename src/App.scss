@@ -2,6 +2,7 @@ main {
   font-family: 'Gayathri', sans-serif;
   font-weight: bold;
   color: white;
+  overflow: scroll;
   background: url("http://41.media.tumblr.com/b4f3eb1230bebbc4d39964dfda9159f3/tumblr_nic5r95Fam1qcopb3o1_1280.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -28,9 +29,12 @@ footer {
 }
 
 nav {
+  position: fixed;
+  width: 100%;
   display: flex;
   justify-content: space-around;
-  align-items: center
+  align-items: center;
+  z-index: 2;
 }
 
 input,
