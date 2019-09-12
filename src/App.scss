@@ -1,42 +1,73 @@
 main {
+  font-family: 'Gayathri', sans-serif;
+  font-weight: bold;
   color: white;
   background: url("http://41.media.tumblr.com/b4f3eb1230bebbc4d39964dfda9159f3/tumblr_nic5r95Fam1qcopb3o1_1280.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-
   background-size: cover;
 }
 
 h1 {
-  writing-mode: vertical-rl;
+  position: fixed;
+  top: 79px;
+  left: 0;
+  writing-mode: vertical-lr;
   text-orientation: upright;
-  float: left;
-  background-color: #0000008a;
+  height: 100%;
+  background-color: #000000db;
   padding: 15px;
+  z-index: 5;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav,
+footer {
+  height: 60px;
+  background-color: black;
+}
+
+nav {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  align-items: center
+}
+
+input,
+button {
+  font-family: 'Gayathri', sans-serif;
+  font-weight: bold;
+  height: 30px;
+  margin: 10px;
+}
+
+button {
+  width: 60px;
+}
+
+form {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+input {
+  font-size: 15px;
+  width: 220px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+// .scroll {
+//   overflow-x: scroll;
+//   overflow-y: hidden;
+//   will-change: transform;
+// }
 
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+// @keyframes App-logo-spin {
+//   from {
+//     transform: rotate(0deg);
+//   }
+
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }

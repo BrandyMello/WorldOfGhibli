@@ -1,7 +1,42 @@
-img {
+.movie-image {
   width: 220px;
   height: 220px;
   position: relative;
   overflow: hidden;
   border-radius: 50%;
+}
+
+.movie-container {
+  display: inline-flex;
+  margin-left: 7%;
+  z-index: 1;
+
+  & h2,
+  & p {
+
+    background-color: #0000008a;
+    padding: 15px;
+  }
+
+  & h2 {
+    height: 40px;
+  }
+
+  & p {
+    width: 200px;
+    height: 600px;
+    overflow: hidden;
+  }
+
+  // .scroll {
+  //   overflow-x: scroll;
+  //   overflow-y: hidden;
+  //     will-change: transform;
+  // }
+
+  // & img {
+  //   position: relative;
+  //   top: 100px;
+  //   right: 65%;
+  // }
 }

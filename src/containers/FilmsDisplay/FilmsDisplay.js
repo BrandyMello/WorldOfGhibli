@@ -1,6 +1,7 @@
 import React from 'react';
 import images from '../../images/images.js';
 import Film from '../Film/Film';
+import './FilmsDisplay.scss'
 
 const FilmsDisplay = ({ films }) => {
   console.log(images)
@@ -14,8 +15,7 @@ const FilmsDisplay = ({ films }) => {
   })
 
   return (
-
-    <div>
+    <div className="movie-container">
       {mappedFilms}
     </div>
   )

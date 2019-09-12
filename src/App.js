@@ -22,13 +22,16 @@ class App extends Component {
   render() {
     return (
       <main>
-        <h1>World of Ghibli</h1>
         <nav className="nav">
           <button>HOME</button>
-          <input placeholder="player's name: Joanna Jones"></input>
-          <button>PLAY GAME</button>
+          <form className="enter-game">
+            <input placeholder="player's name: "></input>
+            <button>PLAY GAME</button>
+          </form>
+          <h1>World of Ghibli</h1>  
         </nav>
-        <FilmsDisplay films={this.state.films} />
+          <FilmsDisplay films={this.state.films} />
+        <footer></footer>
       </main>
     )
   }
