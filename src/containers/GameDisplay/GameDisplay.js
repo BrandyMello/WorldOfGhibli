@@ -6,7 +6,7 @@ const GameDisplay = ({characters}) => {
   const mappedGames = characters.map((character, index) => {
     return <Game
       key={character.id}
-      title={character.name}
+      name={character.name}
       gender={character.gender}
       age={character.age}
       eyeColor={character.eye_color}
@@ -15,7 +15,7 @@ const GameDisplay = ({characters}) => {
   })
 
   return (
-    <div>
+    <div className="background">
       {mappedGames}
     </div>
   )
