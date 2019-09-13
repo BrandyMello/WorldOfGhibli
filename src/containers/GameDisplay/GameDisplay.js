@@ -3,7 +3,7 @@ import Game from '../Game/Game';
 import images from '../../images/images.js';
 
 const GameDisplay = ({characters}) => {
-  const characterNames = characters.map(character => character.name);
+  const characterNames = characters.map(character => character.name);//may not need because in reducer
   const mappedGames = characters.map((character) => {
     return <Game
       key={character.id}

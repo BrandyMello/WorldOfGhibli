@@ -3,7 +3,8 @@ export const storeCharactersReducer = (state=[], action) => {
     case 'STORE_CHARACTERS':
       return action.characters;
     case 'STORE_CHAR_NAMES':
-      return action.characterNames;
+      const characterNames = action.characters.map(character => character.name);
+      return characterNames;
     default:
       return state;
   }  
