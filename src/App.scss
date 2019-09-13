@@ -1,0 +1,60 @@
+main {
+  font-family: 'Gayathri', sans-serif;
+  font-weight: bold;
+  color: white;
+  overflow: scroll;
+  background: url("http://41.media.tumblr.com/b4f3eb1230bebbc4d39964dfda9159f3/tumblr_nic5r95Fam1qcopb3o1_1280.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h1 {
+  position: fixed;
+  top: 79px;
+  left: 0;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  height: 100%;
+  background-color: #000000db;
+  padding: 15px;
+  z-index: 5;
+}
+
+nav,
+footer {
+  height: 60px;
+  background-color: black;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 2;
+}
+
+input,
+button {
+  font-family: 'Gayathri', sans-serif;
+  font-weight: bold;
+  height: 30px;
+  margin: 10px;
+}
+
+button {
+  width: 60px;
+}
+
+form {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  font-size: 15px;
+  width: 220px;
+}
