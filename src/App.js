@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom';
-import Game from './containers/Game/Game';
+import * as apiCalls from './Fetch/apiCalls.js';
+import GameDisplay from './containers/GameDisplay/GameDisplay';
 import './App.scss';
 import FilmsDisplay from './containers/FilmsDisplay/FilmsDisplay';
 
@@ -13,11 +14,9 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch('https://ghibliapi.herokuapp.com/films/')
-      .then(response => response.json())
+    apiCalls.getFilms()
       .then(films => this.setState({ films: films }))
       .catch(err => console.error(err));
-
   }
 
   render() {
@@ -32,7 +31,7 @@ class App extends Component {
           <h1>World of Ghibli</h1>  
         </nav>
         <Route exact path='/' render={() => <FilmsDisplay films={this.state.films}/>} />
-        <Route exact path='/game' render={() => <Game films={this.state.films} />} /> 
+        <Route exact path='/game' render={() => <GameDisplay films={this.state.films} />} /> 
         <footer></footer>
       </main> 
     )
