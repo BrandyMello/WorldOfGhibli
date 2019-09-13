@@ -3,14 +3,10 @@ export const storeFilms = (films) => ({
   films
 });
 
-export const storeCharacters = (characters) => ({
+export const storeCharacters = (characters, characterNames) => ({
   type: 'STORE_CHARACTERS',
-  characters
-});
-
-export const storeCharNames = (charNames) => ({
-  type: 'STORE_CHAR_NAMES',
-  charNames: charNames
+  characters,
+  characterNames
 });
 
 export const setCurrentPlayer = (playerName) => ({

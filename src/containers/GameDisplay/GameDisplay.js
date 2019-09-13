@@ -3,7 +3,8 @@ import Game from '../Game/Game';
 import images from '../../images/images.js';
 
 const GameDisplay = ({characters}) => {
-  const mappedGames = characters.map((character, index) => {
+  const characterNames = characters.map(character => character.name);
+  const mappedGames = characters.map((character) => {
     return <Game
       key={character.id}
       name={character.name}
@@ -11,6 +12,7 @@ const GameDisplay = ({characters}) => {
       age={character.age}
       eyeColor={character.eye_color}
       hairColor={character.hair_color}
+      characterNames={characterNames}
     />
   })
 
