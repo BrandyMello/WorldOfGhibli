@@ -9,13 +9,18 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      films: []
+      films: [],
+      characters: []
     }
   }
 
   componentDidMount = () => {
     apiCalls.getFilms()
       .then(films => this.setState({ films: films }))
+      .catch(err => console.error(err));
+    
+    apiCalls.getCharacters()
+      .then(characters => this.setState({characters: characters}))
       .catch(err => console.error(err));
   }
 
@@ -31,7 +36,7 @@ class App extends Component {
           <h1>World of Ghibli</h1>  
         </nav>
         <Route exact path='/' render={() => <FilmsDisplay films={this.state.films}/>} />
-        <Route exact path='/game' render={() => <GameDisplay films={this.state.films} />} /> 
+        <Route exact path='/game' render={() => <GameDisplay characters={this.state.characters} />} /> 
         <footer></footer>
       </main> 
     )
