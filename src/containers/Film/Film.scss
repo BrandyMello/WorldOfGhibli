@@ -14,13 +14,13 @@
 
   & h2,
   & p {
-
     background-color: #0000008a;
     padding: 15px;
   }
 
   & h2 {
     height: 40px;
+    text-align: center;
   }
 
   & p {
@@ -28,16 +28,4 @@
     height: 600px;
     overflow: hidden;
   }
-
-  // .scroll {
-  //   overflow-x: scroll;
-  //   overflow-y: hidden;
-  //     will-change: transform;
-  // }
-
-  // & img {
-  //   position: relative;
-  //   top: 100px;
-  //   right: 65%;
-  // }
 }

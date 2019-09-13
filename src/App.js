@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import './images/backgrounds';
 import './App.scss';
 import FilmsDisplay from './containers/FilmsDisplay/FilmsDisplay';
 
