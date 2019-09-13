@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom';
+import Game from './containers/Game/Game';
 import './App.scss';
 import FilmsDisplay from './containers/FilmsDisplay/FilmsDisplay';
 
@@ -31,8 +32,9 @@ class App extends Component {
           <h1>World of Ghibli</h1>  
         </nav>
         <Route exact path='/' render={() => <FilmsDisplay films={this.state.films}/>} />
+        <Route exact path='/game' render={() => <Game films={this.state.films} />} /> 
         <footer></footer>
-      </main>
+      </main> 
     )
   }
 }
