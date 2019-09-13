@@ -3,9 +3,13 @@ export const storeFilms = (films) => ({
   films
 });
 
-export const storeCharacters = (characters, characterNames) => ({
+export const storeCharacters = (characters) => ({
   type: 'STORE_CHARACTERS',
-  characters,
+  characters
+});
+
+export const storeCharNames = (characterNames) => ({
+  type: 'STORE_CHAR_NAMES',
   characterNames
 });
 
