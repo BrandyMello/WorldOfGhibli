@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, NavLink } from 'react-router-dom';
 import './App.scss';
 import FilmsDisplay from './containers/FilmsDisplay/FilmsDisplay';
 
@@ -22,14 +23,14 @@ class App extends Component {
     return (
       <main>
         <nav className="nav">
-          <button>HOME</button>
+          <NavLink to='/' className="home-nav"><button>HOME</button></NavLink>
           <form className="enter-game">
             <input placeholder="player's name: "></input>
-            <button>PLAY GAME</button>
+            <NavLink to='/game' className='game-nav'><button>PLAY GAME</button></NavLink>
           </form>
           <h1>World of Ghibli</h1>  
         </nav>
-          <FilmsDisplay films={this.state.films} />
+        <Route exact path='/' render={() => <FilmsDisplay films={this.state.films}/>} />
         <footer></footer>
       </main>
     )
