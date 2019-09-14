@@ -6,7 +6,8 @@ import { bindActionCreators } from 'redux';
 // import PropTypes from 'prop-types';
 // import images from '../../images/images.js';
 
-const GameDisplay = ({characters}) => {
+const GameDisplay = ({characters, player}) => {
+  console.log(player)
   const characterNames = characters.map(character => character.name);//may not need because in reducer
   const mappedGames = characters.map((character) => {
     return <Game

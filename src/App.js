@@ -40,9 +40,6 @@ class App extends Component {
       .catch(err => console.error(err));
   }
     
-  
-    
-
   render() {
     return (
       <main>
@@ -55,7 +52,7 @@ class App extends Component {
           <h1>World of Ghibli</h1>  
         </nav>
         <Route exact path='/' render={() => <FilmsDisplay films={this.props.films}/>} />
-        <Route exact path='/game' render={() => <GameDisplay characters={this.props.characters} />} /> 
+        <Route exact path='/game' render={() => <GameDisplay characters={this.props.characters} player={this.props.player}/>} /> 
         <footer></footer>
       </main> 
     )
