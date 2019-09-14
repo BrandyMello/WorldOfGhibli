@@ -7,7 +7,7 @@ import Game from '../Game/Game';
 // import images from '../../images/images.js';
 
 const GameDisplay = ({characters, player}) => {
-  console.log(player)
+  console.log({player})
   const characterNames = characters.map(character => character.name);//may not need because in reducer
   const mappedGames = characters.map((character) => {
     return <Game
@@ -18,6 +18,7 @@ const GameDisplay = ({characters, player}) => {
       eyeColor={character.eye_color}
       hairColor={character.hair_color}
       characterNames={characterNames}
+      player={player}
     />
   })
 
