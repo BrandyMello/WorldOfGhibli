@@ -1,7 +1,7 @@
 import React from 'react';
 import images from '../../images/images.js';
 import Film from '../Film/Film';
-import './FilmsDisplay.scss'
+import './FilmsDisplay.scss'//needed?
 
 const FilmsDisplay = ({ films }) => {
   console.log(images)

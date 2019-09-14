@@ -4,17 +4,18 @@
   position: relative;
   overflow: hidden;
   border-radius: 50%;
+
 }
 
 .movie-container {
   display: inline-flex;
-  margin-left: 7%;
+  margin-left: 8%;
   margin-top: 60px;
   z-index: 1;
 
   & h2,
   & p {
-    background-color: #0000008a;
+    background-color: #000000d1;
     padding: 15px;
   }
 
