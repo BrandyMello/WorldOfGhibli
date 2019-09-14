@@ -1,7 +1,8 @@
 import React from 'react';
 import './Game.scss';
 
-const Game = ({ name, gender, age, eyeColor, hairColor }) => {
+const Game = ({ name, gender, age, eyeColor, hairColor, characterNames }) => {
+  console.log({characterNames})
   return (
     <main className="game-background-img whole-game">
       <article className="ea-game">
