@@ -114,11 +114,39 @@ describe('App', () => {
     const mappedDispatchedProps = mapDispatchToProps(mockDispatch);
 
     it('should call dispatch with the storeFilms action', () => {
-      const dispatchStoreFilmsAction = storeFilms(mockDispatch);
+      const mockFilms = [{ film1: 'stuff' }, { film2: 'stuff' }];
+      const dispatchStoreFilmsAction = storeFilms(mockFilms);
 
-      mappedDispatchedProps.storeFilms(jest.fn());
+      mappedDispatchedProps.storeFilms(mockFilms);
 
       expect(mockDispatch).toHaveBeenCalledWith(dispatchStoreFilmsAction)
+    });
+
+    it('should call dispatch with the storeCharacters action', () => {
+      const mockCharacters = [{ character1: 'stuff' }, { character2: 'stuff' }];
+      const dispatchStoreCharactersAction = storeCharacters(mockCharacters);
+
+      mappedDispatchedProps.storeCharacters(mockCharacters);
+
+      expect(mockDispatch).toHaveBeenCalledWith(dispatchStoreCharactersAction)
+    });
+
+    it('should call dispatch with the storeCharNames action', () => {
+      const mockCharacters = [{ character1: 'stuff' }, { character2: 'stuff' }];
+      const dispatchStoreCharNamesAction = storeCharNames(mockCharacters);
+
+      mappedDispatchedProps.storeCharNames(mockCharacters);
+
+      expect(mockDispatch).toHaveBeenCalledWith(dispatchStoreCharNamesAction);
+    });
+
+    it('should call dispatch with setCurrentPlayer action', () => {
+      const mockPlayer = ['Brandy'];
+      const dispatchSetCurrentPlayerAction = setCurrentPlayer(mockPlayer);
+
+      mappedDispatchedProps.setCurrentPlayer(mockPlayer);
+
+      expect(mockDispatch).toHaveBeenCalledWith(dispatchSetCurrentPlayerAction);
     });
   });
   
@@ -131,8 +159,49 @@ describe('App', () => {
       }
       const result = storeFilms(films);
       expect(result).toEqual(expectedAction);
-    })
+    });
+
+    it('should have a type of "STORE_CHARACTERS"', () => {
+      const characters = [{ character1: 'stuff' }, { character2: 'stuff' }]
+      const expectedAction = {
+        type: 'STORE_CHARACTERS',
+        characters: characters
+      }
+      const result = storeCharacters(characters);
+      expect(result).toEqual(expectedAction);
+    });
+
+    it('should have a type of "STORE_CHAR_NAMES"', () => {
+      const characters = [{ character1: 'stuff' }, { character2: 'stuff' }]
+      const expectedAction = {
+        type: 'STORE_CHAR_NAMES',
+        characters: characters
+      }
+      const result = storeCharNames(characters);
+      expect(result).toEqual(expectedAction);
+    });
+
+    it('should have a type of "SET_CURRENT_PLAYER"', () => {
+      const player = ['Brandy']
+      const expectedAction = {
+        type: 'SET_CURRENT_PLAYER',
+        player: player
+      }
+      const result = setCurrentPlayer(player);
+      expect(result).toEqual(expectedAction);
+    });
   });
 });
+
+//in another test file
+// it('should have a type of "SET_WINS"', () => {
+//   const numOfWins = []
+//   const expectedAction = {
+//     type: 'SET_WINS',
+//     numOfWins: numOfWins
+//   }
+//   const result = setWins(numOfWins);
+//   expect(result).toEqual(expectedAction);
+// });
 
 
