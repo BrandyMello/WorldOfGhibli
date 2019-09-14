@@ -1,8 +1,8 @@
 import React from 'react';
 import Game from '../Game/Game';
-import { connect } from 'react-redux';
-import { setWins } from '../../actions';
-import { bindActionCreators } from 'redux';
+// import { connect } from 'react-redux';
+// import { setWins } from '../../actions';
+// import { bindActionCreators } from 'redux';
 // import PropTypes from 'prop-types';
 // import images from '../../images/images.js';
 

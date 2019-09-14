@@ -47,7 +47,9 @@ class App extends Component {
           <NavLink to='/' className="home-nav"><button>HOME</button></NavLink>
           <form className="enter-game">
             <input placeholder="player's name: " name="player" value={this.state.player} onChange={this.handlePlayerInput}></input>
-            <NavLink to='/game' className='game-nav'onClick={this.declarePlayer}><button>PLAY GAME</button></NavLink>
+            <NavLink to='/' onClick={this.declarePlayer}>
+              <NavLink to='/game' className='game-nav'><button>PLAY GAME</button></NavLink>
+            </NavLink>
           </form>
           <h1>World of Ghibli</h1>  
         </nav>
