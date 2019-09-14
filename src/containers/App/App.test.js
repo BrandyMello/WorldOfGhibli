@@ -84,4 +84,55 @@ describe('App', () => {
   it('should match the snapshot with the data passed through', () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should save the player input name to state', () => {
+    wrapper.find('input').simulate('change', {target: {value: 'Brandy', name: 'player'}});
+
+    expect(wrapper.state('player')).toEqual('Brandy');
+  });
+
+  it('mapStateToProps should get the props', () => {
+    const expectedProps = {
+      films: mockFilms,
+      characters: mockCharacters,
+      characterNames: mockCharacterNames,
+      player: mockPlayer
+    }
+     const mockedProps = {
+       films: mockFilms,
+       characters: mockCharacters,
+       characterNames: mockCharacterNames,
+       player: 'Brandy'
+     }
+    
+    const mappedProps = mapStateToProps(mockedProps);
+    expect(mappedProps).toEqual(expectedProps);
+  });
+
+  describe('mapDispatchToProps', () => {
+    const mockDispatch = jest.fn();
+    const mappedDispatchedProps = mapDispatchToProps(mockDispatch);
+
+    it('should call dispatch with the storeFilms action', () => {
+      const dispatchStoreFilmsAction = storeFilms(mockDispatch);
+
+      mappedDispatchedProps.storeFilms(jest.fn());
+
+      expect(mockDispatch).toHaveBeenCalledWith(dispatchStoreFilmsAction)
+    });
+  });
+  
+  describe('actions', () =>{
+    it('should have a type of "STORE_FILMS"', () => {
+      const films = [{film1: 'stuff'}, {film2: 'stuff'}]
+      const expectedAction = {
+        type: 'STORE_FILMS',
+        films: films
+      }
+      const result = storeFilms(films);
+      expect(result).toEqual(expectedAction);
+    })
+  });
 });
+
+
