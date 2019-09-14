@@ -24,6 +24,11 @@ class App extends Component {
   declarePlayer = (e) => {
     e.preventDefault();
     this.props.setCurrentPlayer(this.state.player);
+    this.clearInput();
+  }
+
+  clearInput = () => {
+    this.setState({player: ''})
   }
 
   componentDidMount = () => {
