@@ -8,9 +8,9 @@ export const storeCharacters = (characters) => ({
   characters
 });
 
-export const storeCharNames = (characterNames) => ({
+export const storeCharNames = (characters) => ({
   type: 'STORE_CHAR_NAMES',
-  characterNames
+  characters
 });
 
 export const setCurrentPlayer = (playerName) => ({
