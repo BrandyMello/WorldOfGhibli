@@ -5,26 +5,35 @@ import GameDisplay from './containers/GameDisplay/GameDisplay';
 import './App.scss';
 import FilmsDisplay from './containers/FilmsDisplay/FilmsDisplay';
 import { connect } from 'react-redux';
-import { storeFilms, storeCharacters, storeCharNames } from './actions';
+import { storeFilms, storeCharacters, storeCharNames, setCurrentPlayer } from './actions';
 import { bindActionCreators } from 'redux';
 // import PropTypes from 'prop-types';
 
 class App extends Component {
   constructor() {
     super();
+    this.state={
+      player: ''
+    }
+  }
+
+  handlePlayerInput = (e) => {
+    this.setState({[e.target.name]: e.target.value});
+  }
+
+  declarePlayer = (e) => {
+    e.preventDefault();
+    this.props.setCurrentPlayer(this.state.player);
   }
 
   componentDidMount = () => {
     apiCalls.getFilms()
       .then(films => this.props.storeFilms(films))
-      // .then(films => console.log(films))
       .catch(err => console.error(err));
     
     apiCalls.getCharacters()
       .then(characters => this.props.storeCharacters(characters))
       .catch(err => console.error(err));
-
-      
 
     apiCalls.getCharacters()
       .then(characters => this.props.storeCharNames(characters))
@@ -35,14 +44,13 @@ class App extends Component {
     
 
   render() {
-    // console.log(this.props)
     return (
       <main>
         <nav className="nav">
           <NavLink to='/' className="home-nav"><button>HOME</button></NavLink>
           <form className="enter-game">
-            <input placeholder="player's name: "></input>
-            <NavLink to='/game' className='game-nav'><button>PLAY GAME</button></NavLink>
+            <input placeholder="player's name: " name="player" value={this.state.player} onChange={this.handlePlayerInput}></input>
+            <NavLink to='/game' className='game-nav'onClick={this.declarePlayer}><button>PLAY GAME</button></NavLink>
           </form>
           <h1>World of Ghibli</h1>  
         </nav>
@@ -57,11 +65,12 @@ class App extends Component {
 export const mapStateToProps = state => ({
   films: state.films,
   characters: state.characters,
-  characterNames: state.characterNames
+  characterNames: state.characterNames,
+  player: state.player
 });
 
 export const mapDispatchToProps = dispatch => (
-  bindActionCreators({ storeFilms, storeCharacters, storeCharNames }, dispatch)
+  bindActionCreators({ storeFilms, storeCharacters, storeCharNames, setCurrentPlayer }, dispatch)
 );
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

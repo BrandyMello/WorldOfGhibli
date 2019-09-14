@@ -13,9 +13,9 @@ export const storeCharNames = (characters) => ({
   characters
 });
 
-export const setCurrentPlayer = (playerName) => ({
+export const setCurrentPlayer = (player) => ({
   type: 'SET_CURRENT_PLAYER',
-  playerName
+  player
 });
 
 export const setWins = (numOfWins) => ({
