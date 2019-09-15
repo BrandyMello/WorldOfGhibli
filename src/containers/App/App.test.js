@@ -50,11 +50,11 @@ getFilms.mockImplementation(() => {
     })
   });
 
-  getCharacters.mockImplementation(() => {
-    return Promise.resolve({
-      characters: [mockCharacter, mockCharacter]
-    })
-  });
+getCharacters.mockImplementation(() => {
+  return Promise.resolve({
+    characters: [mockCharacter, mockCharacter]
+  })
+});
 
 describe('App', () => {
   let wrapper;
@@ -107,6 +107,19 @@ describe('App', () => {
     
     const mappedProps = mapStateToProps(mockedProps);
     expect(mappedProps).toEqual(expectedProps);
+  });
+
+  describe('mapStateToProps', () => {
+    it('should return an array of film objects, an array of character objects, an array of character names, and a player name', () => {
+      const mockState = {
+        films: [{film1: 'this'}, {film2: 'that'}],
+        characters: [{ character1: 'this' }, { character2: 'that' }],
+        characterNames: ['Bill', 'Bob'],
+        player: 'Brandy'
+      };
+      const mappedProps = mapStateToProps(mockState);
+      expect(mappedProps).toEqual(mockState);
+    })
   });
 
   describe('mapDispatchToProps', () => {
