@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Route, NavLink } from 'react-router-dom';
-import * as apiCalls from './Fetch/apiCalls.js';
-import GameDisplay from './containers/GameDisplay/GameDisplay';
+import { getFilms, getCharacters } from '../../Fetch/apiCalls.js';
+import GameDisplay from '../../components/GameDisplay/GameDisplay';
 import './App.scss';
-import FilmsDisplay from './containers/FilmsDisplay/FilmsDisplay';
+import FilmsDisplay from '../../components/FilmsDisplay/FilmsDisplay';
 import { connect } from 'react-redux';
-import { storeFilms, storeCharacters, storeCharNames, setCurrentPlayer } from './actions';
+import { storeFilms, storeCharacters, storeCharNames, setCurrentPlayer } from '../../actions';
 import { bindActionCreators } from 'redux';
 // import PropTypes from 'prop-types';
 
-class App extends Component {
+export class App extends Component {
   constructor() {
     super();
     this.state={
@@ -32,15 +32,15 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    apiCalls.getFilms()
+    getFilms()
       .then(films => this.props.storeFilms(films))
       .catch(err => console.error(err));
     
-    apiCalls.getCharacters()
+    getCharacters()
       .then(characters => this.props.storeCharacters(characters))
       .catch(err => console.error(err));
 
-    apiCalls.getCharacters()
+    getCharacters()
       .then(characters => this.props.storeCharNames(characters))
       .catch(err => console.error(err));
   }
@@ -65,6 +65,8 @@ class App extends Component {
     )
   }
 }
+
+{/* <h2>Welcome to the World of Ghibli Character Game, {player}! Guess which character is described.</h2> */}
 
 export const mapStateToProps = state => ({
   films: state.films,
