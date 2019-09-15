@@ -85,6 +85,12 @@ describe('App', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+
+  it('should call getFilms and getCharacters after mounting', () => {
+    expect(getFilms).toHaveBeenCalled();
+    expect(getCharacters).toHaveBeenCalled();
+  })
+
   it('should save the player input name to state', () => {
     wrapper.find('input').simulate('change', {target: {value: 'Brandy', name: 'player'}});
 
@@ -204,6 +210,7 @@ describe('App', () => {
       expect(result).toEqual(expectedAction);
     });
   });
+
 });
 
 //in another test file
