@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 
 const GameDisplay = ({characters, player}) => {
   console.log({player})
-  const characterNames = characters.map(character => character.name);//may not need because in reducer
+  const characterNames = characters.map(character => character.name);
+
   const mappedGames = characters.map((character, index) => {
     return <Game
       index={index}

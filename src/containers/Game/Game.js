@@ -11,9 +11,10 @@ export class Game extends Component {
     super(props);
     this.state = {
       guess: '',
-      wins: 0,
+      // wins: this.props.wins,
       winningGif: '',
-      isWinner: false 
+      isWinner: false,
+      correct: true
     }
   }
  randomizeName = (name) => {
@@ -37,35 +38,39 @@ export class Game extends Component {
   checkGuess = (guess, name, index) => {
     console.log(guess, name)
     if (guess.toLowerCase() === name.toLowerCase()) {
-      console.log('you won!')
-      this.state.wins += 1;
-      this.props.setWins(this.state.wins);
-      console.log(this.state.wins)
-      console.log(images[`film${this.props.index}`][4])
-      this.setState({winningGif: images[`film${this.props.index}`][4]});
-      console.log(this.state.winningGif)
+      // console.log('you won!')
+      // this.state.wins += 1;
+      // this.props.setWins(this.state.wins);
+      this.setState({winningGif: images[`film${this.props.index}`][2]});
       this.setState({isWinner: true});
+      this.setState({ correct: true });
     } else {
+      this.setState({correct: false});
       console.log('try again')
     }
   }
 
   render() {
-      const { index, name, gender, age, eyeColor, hairColor, characterNames, player, wins, guess } = this.props;
+    const { index, name, gender, age, eyeColor, hairColor, characterNames, player, wins, guess } = this.props;
+
+    const btnClass = this.state.correct ? 'submit-guess' : 'submit-guess wrong-guess'
 
   return (
     <main className="game-background-img whole-game">
       <article className="ea-game">
-        <h2>{this.randomizeName(name)}</h2>
-        <p className="clues">CLUES:</p>
-        <p>Gender: {gender}</p>
-        <p>Age: {age}</p>
-        <p>Eye Color: {eyeColor}</p>
-        <p>Hair Color: {hairColor}</p>
+        {this.state.isWinner && <img src={this.state.winningGif} alt='victory gif' className="victory-gif"></img> ||
+        <div className='clue-div'>
+          <h2>{this.randomizeName(name)}</h2>
+          <p className="clues">CLUES:</p>
+          <p>Gender: {gender}</p>
+          <p>Age: {age}</p>
+          <p>Eye Color: {eyeColor}</p>
+          <p>Hair Color: {hairColor}</p>
+        </div>}
         <form className="guess-form" onSubmit={(e) => this.submitGuess(e, name, index)}>
           <input className="guess-input" name="guess" placeholder="type guess here..." onChange={this.handleGuess}></input>
-          <button className='submit-guess'>X</button>
-          {this.state.isWinner && <img scr={this.state.winningGif} alt='victory gif' className="victory-gif"></img>}
+          <button className={btnClass}>X</button>
+          
         </form>
       </article>
     </main>
