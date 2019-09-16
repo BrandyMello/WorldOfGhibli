@@ -17,6 +17,7 @@ export class Game extends Component {
       correct: true
     }
   }
+
  randomizeName = (name) => {
     var randomSort = () => {
       return Math.random() > .5 ? -1 : 1;
@@ -38,18 +39,13 @@ export class Game extends Component {
   checkGuess = (guess, name, index) => {
     console.log(guess, name)
     if (guess.toLowerCase() === name.toLowerCase()) {
-      console.log('you won!')
-      console.log('pre-wins', this.state.wins)
-      // this.props.wins + 1;
       this.setState({wins: this.state.wins += 1})
-      console.log('post-wins', this.state.wins)
       this.props.setWins(this.state.wins);
       this.setState({winningGif: images[`film${this.props.index}`][2]});
       this.setState({isWinner: true});
       this.setState({ correct: true });
     } else {
       this.setState({correct: false});
-      console.log('try again')
     }
   }
 
@@ -72,7 +68,7 @@ export class Game extends Component {
         </div>}
         <form className="guess-form" onSubmit={(e) => this.submitGuess(e, name, index)}>
           <input className="guess-input" name="guess" placeholder="type guess here..." onChange={this.handleGuess}></input>
-          <button className={btnClass}>X</button>
+          <button className={btnClass}>GUESS</button>
           
         </form>
       </article>

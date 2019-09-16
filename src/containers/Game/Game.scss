@@ -32,26 +32,28 @@ p {
 }
 
 h2 {
-  background-color: #6577c3c7;
+  background-color: #6577c3e8;
   text-align: center;
   margin: 0;
   padding-top: 5px;
 }
 
 .guess-input {
-  background-color: #6577c3c7;
-  border-color: #6577c3c7;
+  background-color: #6577c3e8;
+  border-color: #6577c3e8;
   margin: 0;
   height: 32px;
   width: 210px;
 }
 
 .submit-guess {
-  background-color: #6577c3c7;
-  border-color: #6577c3c7;
+  background-color: #6577c3e8;
+  border-color: #6577c3e8;
+  color: white;
   margin: 0;
   height: 37px;
-  font-size: 1.5em;
+  font-size: .8em;
+  font-weight: bold;
   padding-top: 7px;
 }
 
@@ -62,8 +64,3 @@ h2 {
 .guess-input::placeholder {
   color: white;
 }
-
-// .clues {
-//   padding: 2px;
-//   background-color: black;
-// }
