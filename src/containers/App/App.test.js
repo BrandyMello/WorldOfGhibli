@@ -189,15 +189,4 @@ describe('App', () => {
   
 });
 
-//in another test file
-// it('should have a type of "SET_WINS"', () => {
-//   const numOfWins = []
-//   const expectedAction = {
-//     type: 'SET_WINS',
-//     numOfWins: numOfWins
-//   }
-//   const result = setWins(numOfWins);
-//   expect(result).toEqual(expectedAction);
-// });
-
 
