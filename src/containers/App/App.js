@@ -70,7 +70,7 @@ export const mapStateToProps = state => ({
   films: state.films,
   characters: state.characters,
   characterNames: state.characterNames,
-  player: state.player
+  player: [state.player]
 });
 
 export const mapDispatchToProps = dispatch => (
