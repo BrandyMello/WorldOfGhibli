@@ -30,7 +30,9 @@ exports[`App should match the snapshot with the data passed through 1`] = `
           className="game-nav"
           to="/game"
         >
-          <button>
+          <button
+            disabled={true}
+          >
             PLAY GAME
           </button>
         </NavLink>

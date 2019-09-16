@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Game should match the snapshot with the data passed through 1`] = `
+<main
+  className="game-background-img whole-game"
+>
+  <article
+    className="ea-game"
+  >
+    <div
+      className="clue-div"
+    >
+      <h2>
+        eohbis
+      </h2>
+      <p
+        className="clues"
+      >
+        CLUES:
+      </p>
+      <p>
+        Gender: 
+        Male
+      </p>
+      <p>
+        Age: 
+        14
+      </p>
+      <p>
+        Eye Color: 
+        brown
+      </p>
+      <p>
+        Hair Color: 
+        black
+      </p>
+    </div>
+    <form
+      className="guess-form"
+      onSubmit={[Function]}
+    >
+      <input
+        className="guess-input"
+        name="guess"
+        onChange={[Function]}
+        placeholder="type guess here..."
+      />
+      <button
+        className="submit-guess"
+      >
+        X
+      </button>
+    </form>
+  </article>
+</main>
+`;

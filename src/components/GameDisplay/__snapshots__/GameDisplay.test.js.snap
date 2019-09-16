@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameDisplay should match the snapshot 1`] = `
+<div
+  className="background"
+>
+  <h2>
+    Unscramble the character name for a win, 
+    Brandy
+  </h2>
+  <Connect(Game)
+    characterNames={
+      Array [
+        "Eboshi",
+        "Ashikata",
+      ]
+    }
+    index={0}
+    key="1"
+    name="Eboshi"
+    player="Brandy"
+  />
+  <Connect(Game)
+    characterNames={
+      Array [
+        "Eboshi",
+        "Ashikata",
+      ]
+    }
+    index={1}
+    key="2"
+    name="Ashikata"
+    player="Brandy"
+  />
+</div>
+`;

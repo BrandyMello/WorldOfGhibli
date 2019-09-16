@@ -11,14 +11,14 @@ export class Game extends Component {
     super(props);
     this.state = {
       guess: '',
-      // wins: this.props.wins,
+      wins: this.props.wins,
       winningGif: '',
       isWinner: false,
       correct: true
     }
   }
  randomizeName = (name) => {
-    var randomSort = (a, b) => {
+    var randomSort = () => {
       return Math.random() > .5 ? -1 : 1;
     }
     return name.split('').sort(randomSort).join('').toLowerCase();
@@ -38,9 +38,12 @@ export class Game extends Component {
   checkGuess = (guess, name, index) => {
     console.log(guess, name)
     if (guess.toLowerCase() === name.toLowerCase()) {
-      // console.log('you won!')
-      // this.state.wins += 1;
-      // this.props.setWins(this.state.wins);
+      console.log('you won!')
+      console.log('pre-wins', this.state.wins)
+      // this.props.wins + 1;
+      this.setState({wins: this.state.wins += 1})
+      console.log('post-wins', this.state.wins)
+      this.props.setWins(this.state.wins);
       this.setState({winningGif: images[`film${this.props.index}`][2]});
       this.setState({isWinner: true});
       this.setState({ correct: true });

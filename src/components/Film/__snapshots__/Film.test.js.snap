@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Film should take a snapshot 1`] = `
+<article>
+  <h2>
+    Movie
+  </h2>
+  <img
+    className="movie-image"
+    src="imag.png"
+  />
+  <p>
+    Good
+  </p>
+</article>
+`;
