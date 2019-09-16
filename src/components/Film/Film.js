@@ -1,5 +1,6 @@
 import React from 'react';
 import './Film.scss';
+import PropTypes from 'prop-types';
 
 const Film = ({ title, description, photo }) => {
 
@@ -14,3 +15,9 @@ const Film = ({ title, description, photo }) => {
 }
 
 export default Film
+
+Film.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  photo: PropTypes.string.isRequired
+}

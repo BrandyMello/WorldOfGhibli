@@ -1,7 +1,8 @@
 import React from 'react';
 import images from '../../images/images.js';
 import Film from '../Film/Film';
-import './FilmsDisplay.scss'//needed?
+import './FilmsDisplay.scss';
+import PropTypes from 'prop-types';
 
 const FilmsDisplay = ({ films }) => {
   console.log(images)
@@ -22,3 +23,7 @@ const FilmsDisplay = ({ films }) => {
 }
 
 export default FilmsDisplay;
+
+FilmsDisplay.propTypes = {
+  films: PropTypes.array.isRequired
+}
