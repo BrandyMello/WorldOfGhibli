@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { setWins, setGuess } from '../../actions';
 import { bindActionCreators } from 'redux';
 import images from '../../images/images';
+import PropTypes from 'prop-types';
 
 export class Game extends Component { 
   constructor(props) {
@@ -40,7 +41,9 @@ export class Game extends Component {
       this.state.wins += 1;
       this.props.setWins(this.state.wins);
       console.log(this.state.wins)
-      this.setState({winningGif: [`film${this.props.index}`][4]});
+      console.log(images[`film${this.props.index}`][4])
+      this.setState({winningGif: images[`film${this.props.index}`][4]});
+      console.log(this.state.winningGif)
       this.setState({isWinner: true});
     } else {
       console.log('try again')
@@ -79,3 +82,10 @@ export const mapDispatchToProps = dispatch => (
 );
 
 export default connect(mapStateToProps, mapDispatchToProps)(Game);
+
+Game.propTypes = {
+  wins: PropTypes.number,
+  guess: PropTypes.array,
+  setWins: PropTypes.func.isRequired,
+  setGuess: PropTypes.func.isRequired
+}

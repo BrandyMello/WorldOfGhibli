@@ -7,7 +7,7 @@ import FilmsDisplay from '../../components/FilmsDisplay/FilmsDisplay';
 import { connect } from 'react-redux';
 import { storeFilms, storeCharacters, storeCharNames, setCurrentPlayer } from '../../actions';
 import { bindActionCreators } from 'redux';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export class App extends Component {
   constructor() {
@@ -79,4 +79,13 @@ export const mapDispatchToProps = dispatch => (
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 
-
+App.propTypes = {
+  films: PropTypes.array.isRequired,
+  characters: PropTypes.array.isRequired,
+  characterNames: PropTypes.array.isRequired,
+  player: PropTypes.array,
+  storeFilms: PropTypes.func.isRequired,
+  storeCharacters: PropTypes.func.isRequired,
+  storeCharNames: PropTypes.func.isRequired,
+  setCurrentPlayer: PropTypes.func.isRequired
+}
