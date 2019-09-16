@@ -18,7 +18,12 @@ export const setCurrentPlayer = (player) => ({
   player
 });
 
-export const setWins = (numOfWins) => ({
+export const setWins = (wins) => ({
   type: 'SET_WINS',
-  numOfWins
+  wins
+})
+
+export const setGuess = (guess) => ({
+  type: 'SET_GUESS',
+  guess
 })

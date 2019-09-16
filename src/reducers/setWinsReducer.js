@@ -1,7 +1,7 @@
-export const setWinsReducer = (state=[], action) => {
+export const setWinsReducer = (state=0, action) => {
   switch(action.type) {
     case 'SET_WINS':
-      return action.numOfWins;
+      return action.wins;
     default:
       return state;
   }
