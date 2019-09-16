@@ -18,7 +18,7 @@ export class Game extends Component {
     }
   }
  randomizeName = (name) => {
-    var randomSort = (a, b) => {
+    var randomSort = () => {
       return Math.random() > .5 ? -1 : 1;
     }
     return name.split('').sort(randomSort).join('').toLowerCase();
