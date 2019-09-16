@@ -7,7 +7,7 @@ describe('storeCharactersReducer', () => {
     expect(result).toEqual(expected);
   });
 
-  it('should should return the new state when the type matches "STORE_CHARACTERS" it will return the characters', async () => {
+  it('should return the new state when the type matches "STORE_CHARACTERS" it will return the characters', async () => {
     const expected = [
       {
         id: 5678,
