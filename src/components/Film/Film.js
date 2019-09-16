@@ -17,7 +17,7 @@ const Film = ({ title, description, photo }) => {
 export default Film
 
 Film.propTypes = {
-  title: PropTypes.array.isRequired,
-  description: PropTypes.array.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
   photo: PropTypes.string.isRequired
 }
