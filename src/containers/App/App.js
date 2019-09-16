@@ -66,8 +66,6 @@ export class App extends Component {
   }
 }
 
-{/* <h2>Welcome to the World of Ghibli Character Game, {player}! Guess which character is described.</h2> */}
-
 export const mapStateToProps = state => ({
   films: state.films,
   characters: state.characters,

@@ -1,5 +1,5 @@
 import React from 'react';
-import Game from '../Game/Game';
+import Game from '../../containers/Game/Game';
 // import { connect } from 'react-redux';
 // import { setWins } from '../../actions';
 // import { bindActionCreators } from 'redux';
@@ -9,8 +9,9 @@ import Game from '../Game/Game';
 const GameDisplay = ({characters, player}) => {
   console.log({player})
   const characterNames = characters.map(character => character.name);//may not need because in reducer
-  const mappedGames = characters.map((character) => {
+  const mappedGames = characters.map((character, index) => {
     return <Game
+      index={index}
       key={character.id}
       name={character.name}
       gender={character.gender}
@@ -24,6 +25,7 @@ const GameDisplay = ({characters, player}) => {
 
   return (
     <div className="background">
+      <h2>Unscramble the character name for a win, {player}</h2>
       {mappedGames}
     </div>
   )
