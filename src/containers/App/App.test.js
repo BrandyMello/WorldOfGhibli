@@ -65,7 +65,7 @@ describe('App', () => {
   const mockFilms = [mockFilm, mockFilm];
   const mockCharacters = [mockCharacter, mockCharacter];
   const mockCharacterNames = ['Brandy', 'Fred']
-  const mockPlayer = 'Brandy'
+  const mockPlayer = ['Brandy']
   beforeEach(() => {
     wrapper = shallow(<App 
       films={mockFilms}
@@ -85,6 +85,19 @@ describe('App', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should change the state on the input change within the form', () => {
+        wrapper.find('input').at(0).simulate('change', {target: {value: 'Brandy', name: 'player'}});
+
+        expect(wrapper.state('player')).toEqual('Brandy');
+  });
+
+  // it('should invoke declarePlayer when the play game button is clicked', () => {
+  //   const mockDelcarePlayer = jest.fn({ preventDefault: jest.fn() });
+  //   wrapper.find('button').at(1).simulate('click');
+  //   wrapper.instance().mockDelcarePlayer({ preventDefault: jest.fn() })
+  //   expect(mockDelcarePlayer).toHaveBeenCalled();
+  // });
+
 
   it('should call getFilms and getCharacters after mounting', () => {
     expect(getFilms).toHaveBeenCalled();
@@ -95,6 +108,11 @@ describe('App', () => {
     wrapper.find('input').simulate('change', {target: {value: 'Brandy', name: 'player'}});
 
     expect(wrapper.state('player')).toEqual('Brandy');
+  });
+
+  it('should clear the player input when clearInputs is invoked', () => {
+    wrapper.instance().clearInputs;
+    expect(wrapper.find('input').at(0)).toEqual({});
   });
 
   it('mapStateToProps should get the props', () => {
@@ -210,7 +228,6 @@ describe('App', () => {
       expect(result).toEqual(expectedAction);
     });
   });
-
 });
 
 //in another test file
