@@ -1,68 +1,32 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+# World of Ghibli
+<img width="1438" alt="Screen Shot 2019-09-16 at 8 54 28 PM" src="https://user-images.githubusercontent.com/46384968/65007788-6b7c2b00-d8c4-11e9-9ee0-d1c5d6d4c3d0.png">
+<img width="1437" alt="Screen Shot 2019-09-16 at 8 54 50 PM" src="https://user-images.githubusercontent.com/46384968/65007791-6cad5800-d8c4-11e9-9aff-997eac71992a.png">
+<img width="1437" alt="Screen Shot 2019-09-16 at 8 55 35 PM" src="https://user-images.githubusercontent.com/46384968/65007797-6e771b80-d8c4-11e9-98eb-5484df2dfe9a.png">
 
-### `npm start`
+### World of Ghibli was ...
+a one week sprint focusing on fetching from an API in ReactJS using Router4 and storing information in the Redux store. Components, containers, and fetch calls were tested using unit and asyncronous testing.
+### In the World of Ghibli,
+you can scroll through several Studio Ghibli films, each with a movie cover image, and a description of the film. If you enter your name, you can click the play game button which takes you to the game route. In the game, there are character names with clues for each character. If you unscramble a name, an awesome image from a Studio Ghibli film pops up with a "Great Job!" message. If you do not correctly unscramble the name, the button turns red. But you can try again! Have fun!
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![WoGDemo](https://user-images.githubusercontent.com/46384968/65007299-eb08fa80-d8c2-11e9-9830-c1c0f8ced09c.gif)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## To Check It Out
+https://github.com/BrandyMello/WorldOfGhibli
+* clone this repo
+* npm install
+* npm start
 
-### `npm test`
+## Tech Stack
+* bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
+* Javascript
+* React
+* Router4
+* Redux
+* CSS/SASS
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## WireFrame
+![IMG_20190912_104407](https://user-images.githubusercontent.com/46384968/65008754-a6339280-d8c7-11e9-99d3-e04ba696219a.jpg)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
