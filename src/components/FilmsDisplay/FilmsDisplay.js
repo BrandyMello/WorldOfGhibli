@@ -5,7 +5,6 @@ import './FilmsDisplay.scss';
 import PropTypes from 'prop-types';
 
 const FilmsDisplay = ({ films }) => {
-  console.log(images)
   const mappedFilms = films.map((film, index) => {
     return <Film
       key={film.id}

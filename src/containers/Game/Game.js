@@ -17,7 +17,8 @@ export class Game extends Component {
       correct: true
     }
   }
- randomizeName = (name) => {
+
+  randomizeName = (name) => {
     var randomSort = () => {
       return Math.random() > .5 ? -1 : 1;
     }
@@ -36,32 +37,29 @@ export class Game extends Component {
   }
 
   checkGuess = (guess, name, index) => {
-    console.log(guess, name)
     if (guess.toLowerCase() === name.toLowerCase()) {
-      console.log('you won!')
-      console.log('pre-wins', this.state.wins)
-      // this.props.wins + 1;
       this.setState({wins: this.state.wins += 1})
-      console.log('post-wins', this.state.wins)
       this.props.setWins(this.state.wins);
-      this.setState({winningGif: images[`film${this.props.index}`][2]});
+      this.setState({winningGif: images[`film${index}`][2]});
       this.setState({isWinner: true});
       this.setState({ correct: true });
     } else {
       this.setState({correct: false});
-      console.log('try again')
     }
   }
 
   render() {
-    const { index, name, gender, age, eyeColor, hairColor, characterNames, player, wins, guess } = this.props;
-
+    const { index, name, gender, age, eyeColor, hairColor, wins } = this.props;
     const btnClass = this.state.correct ? 'submit-guess' : 'submit-guess wrong-guess'
 
   return (
     <main className="game-background-img whole-game">
       <article className="ea-game">
-        {this.state.isWinner && <img src={this.state.winningGif} alt='victory gif' className="victory-gif"></img> ||
+        {this.state.isWinner && 
+        <>
+          <h3 className="winning-message">Great Job!</h3>
+          <img src={this.state.winningGif} alt='victory gif' className="victory-gif"></img>
+        </> ||
         <div className='clue-div'>
           <h2>{this.randomizeName(name)}</h2>
           <p className="clues">CLUES:</p>
@@ -69,10 +67,10 @@ export class Game extends Component {
           <p>Age: {age}</p>
           <p>Eye Color: {eyeColor}</p>
           <p>Hair Color: {hairColor}</p>
-        </div>}
+        </div> }
         <form className="guess-form" onSubmit={(e) => this.submitGuess(e, name, index)}>
           <input className="guess-input" name="guess" placeholder="type guess here..." onChange={this.handleGuess}></input>
-          <button className={btnClass}>X</button>
+          <button className={btnClass}>GUESS</button>
           
         </form>
       </article>
@@ -94,6 +92,9 @@ export default connect(mapStateToProps, mapDispatchToProps)(Game);
 Game.propTypes = {
   wins: PropTypes.number,
   guess: PropTypes.array,
+  winningGif: PropTypes.string,
+  isWinner: PropTypes.bool,
+  correct: PropTypes.bool,
   setWins: PropTypes.func.isRequired,
   setGuess: PropTypes.func.isRequired
 }

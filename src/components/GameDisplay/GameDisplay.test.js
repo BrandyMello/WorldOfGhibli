@@ -7,16 +7,14 @@ describe('GameDisplay', () => {
     const wrapper = shallow(
       <GameDisplay
         characters={
-          [
-            {
+          [{
               id: 1,
               name: 'Eboshi'
             },
             {
               id: 2,
               name: 'Ashikata'
-            }
-          ]
+            }]
         }
         player='Brandy'
       />

@@ -1,10 +1,9 @@
 .movie-image {
-  width: 220px;
-  height: 220px;
-  position: relative;
-  overflow: hidden;
   border-radius: 50%;
-
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+  width: 220px;
 }
 
 .movie-container {
@@ -25,8 +24,8 @@
   }
 
   & p {
-    width: 200px;
     height: 600px;
     overflow: hidden;
+    width: 200px;
   }
 }

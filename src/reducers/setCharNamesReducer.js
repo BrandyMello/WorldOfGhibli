@@ -1,4 +1,3 @@
-
 export const setCharNames = (state=[], action) => {
   
 switch(action.type) { 
