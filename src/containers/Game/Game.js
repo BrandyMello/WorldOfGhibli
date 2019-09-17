@@ -11,7 +11,7 @@ export class Game extends Component {
     super(props);
     this.state = {
       guess: '',
-      wins: this.props.wins,
+      wins: 0,
       winningGif: '',
       isWinner: false,
       correct: true
@@ -36,11 +36,15 @@ export class Game extends Component {
     this.checkGuess(this.state.guess, name);
   }
 
+  incrementWins = (num) => {
+    return num +1;
+  }
+
   checkGuess = (guess, name, index) => {
     if (guess.toLowerCase() === name.toLowerCase()) {
-      this.setState({wins: this.state.wins += 1})
-      this.props.setWins(this.state.wins);
-      this.setState({winningGif: images[`film${index}`][2]});
+      this.setState({wins: this.incrementWins(this.state.wins)})
+      this.props.setWins(this.state.wins +=1);
+      this.setState({winningGif: images[`film${this.props.index}`][2]});
       this.setState({isWinner: true});
       this.setState({ correct: true });
     } else {

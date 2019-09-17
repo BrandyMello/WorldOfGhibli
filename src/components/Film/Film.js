@@ -7,7 +7,7 @@ const Film = ({ title, description, photo }) => {
   return (
       <article>
         <h2>{title}</h2>
-        <img src={photo} className='movie-image'></img>
+        <img src={photo} className='movie-image' alt='movie-cover'></img>
         <p>{description}</p>
       </article>
 
