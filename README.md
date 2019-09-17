@@ -17,6 +17,7 @@ https://github.com/BrandyMello/WorldOfGhibli
 * clone this repo
 * npm install
 * npm start
+#### API Used: https://ghibliapi.herokuapp.com/#
 
 ## Tech Stack
 * bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
