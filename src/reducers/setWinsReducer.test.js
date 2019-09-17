@@ -13,7 +13,6 @@ describe('setWinsReducer', () => {
       type: "SET_WINS",
       wins: 0
     };
-
     const result = setWinsReducer(undefined, actionObj);
 
     expect(result).toEqual(expected);

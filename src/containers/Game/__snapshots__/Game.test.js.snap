@@ -11,7 +11,7 @@ exports[`Game should match the snapshot with the data passed through 1`] = `
       className="clue-div"
     >
       <h2>
-        eohbis
+        obiesh
       </h2>
       <p
         className="clues"
@@ -48,7 +48,7 @@ exports[`Game should match the snapshot with the data passed through 1`] = `
       <button
         className="submit-guess"
       >
-        X
+        GUESS
       </button>
     </form>
   </article>

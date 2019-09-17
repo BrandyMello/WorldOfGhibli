@@ -3,7 +3,6 @@ import { storeFilmsReducer } from './storeFilmsReducer';
 describe('storeFilmsReducer', ()=> {
   it('should return state if the type does not match', () => {
     const expected = [];
-
     const result = storeFilmsReducer(undefined, {});
 
     expect(result).toEqual(expected);
@@ -20,7 +19,6 @@ describe('storeFilmsReducer', ()=> {
         name: 'straying'
       }
     ];
-
     const actionObj = {
       type: 'STORE_FILMS',
       films: [
@@ -34,11 +32,8 @@ describe('storeFilmsReducer', ()=> {
         }
       ]
     };
-
     const result = storeFilmsReducer(undefined, actionObj);
 
     await expect(result).toEqual(expected);
-  });
-
-  
+  }); 
 })

@@ -3,7 +3,6 @@ import Game from '../../containers/Game/Game';
 import PropTypes from 'prop-types';
 
 const GameDisplay = ({characters, player}) => {
-  console.log({player})
   const characterNames = characters.map(character => character.name);
 
   const mappedGames = characters.map((character, index) => {
@@ -32,5 +31,5 @@ export default GameDisplay
 
 GameDisplay.propTypes = {
   characters: PropTypes.array.isRequired,
-  player: PropTypes.array
+  player: PropTypes.string
 }
