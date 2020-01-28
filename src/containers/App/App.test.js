@@ -92,6 +92,7 @@ describe('App', () => {
 
   // it('should invoke declarePlayer when the play game button is clicked', () => {
   //   const mockDelcarePlayer = jest.fn({ preventDefault: jest.fn() });
+  //   wrapper.instance().forceUpdate();
   //   wrapper.find('button').at(1).simulate('click');
   //   wrapper.instance().mockDelcarePlayer({ preventDefault: jest.fn() })
   //   expect(mockDelcarePlayer).toHaveBeenCalled();
