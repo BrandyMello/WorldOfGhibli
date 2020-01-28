@@ -1,9 +1,9 @@
 .game-background-img {
-  background: url("https://cdn.suwalls.com/wallpapers/anime/studio-ghibli-characters-36913-3840x2160.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  // background: url("https://cdn.suwalls.com/wallpapers/anime/studio-ghibli-characters-36913-3840x2160.jpg") no-repeat center center fixed;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  // background-size: cover;
   z-index: 0;
 }
 
@@ -27,8 +27,9 @@ p {
   padding-left: 35px;
 }
 
-.background {
-  margin-top: 57px;
+.instruction {
+  height: 50px;
+  padding-top: 85px;
 }
 
 h2 {

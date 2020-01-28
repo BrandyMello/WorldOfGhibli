@@ -1,4 +1,5 @@
 .movie-image {
+  margin: 20px;
   border-radius: 50%;
   height: 220px;
   overflow: hidden;
@@ -15,16 +16,16 @@
   & h2,
   & p {
     background-color: #000000d1;
-    padding: 15px;
+    padding: 20px;
   }
 
   & h2 {
-    height: 40px;
+    height: 50px;
     text-align: center;
   }
 
   & p {
-    height: 600px;
+    height: 610px;
     overflow: hidden;
     width: 200px;
   }

@@ -20,8 +20,8 @@ const GameDisplay = ({characters, player}) => {
   })
 
   return (
-    <div className="background">
-      <h2>Unscramble the character name for a win, {player}</h2>
+    <div >
+      <h2 className="instruction">Unscramble the character name for a win, {player}</h2>
       {mappedGames}
     </div>
   )

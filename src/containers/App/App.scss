@@ -2,13 +2,20 @@ main {
   color: white;
   font-family: 'Gayathri', sans-serif;
   font-weight: bold;
-  overflow-y: scroll;
   z-index: -1;
+}
+
+.section_films_display {
+  overflow-y: scroll;
   background: url("http://41.media.tumblr.com/b4f3eb1230bebbc4d39964dfda9159f3/tumblr_nic5r95Fam1qcopb3o1_1280.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.section_game_display {
+  background: url(https://cdn.suwalls.com/wallpapers/anime/studio-ghibli-characters-36913-3840x2160.jpg) no-repeat center center fixed;
 }
 
 h1 {

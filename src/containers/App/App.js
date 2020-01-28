@@ -49,20 +49,48 @@ export class App extends Component {
     return (
       <main>
         <nav className="nav">
-          <NavLink to='/' className="home-nav"><button>HOME</button></NavLink>
+          <NavLink to="/" className="home-nav">
+            <button>HOME</button>
+          </NavLink>
           <form className="enter-game">
-            <input placeholder="player's name: " name="player" value={this.state.player} onChange={this.handlePlayerInput}></input>
-            <NavLink to='/' onClick={this.declarePlayer}>
-              <NavLink to='/game' className='game-nav'><button disabled={!this.state.player}>PLAY GAME</button></NavLink>
+            <input
+              placeholder="player's name: "
+              name="player"
+              value={this.state.player}
+              onChange={this.handlePlayerInput}
+            ></input>
+            <NavLink to="/" onClick={this.declarePlayer}>
+              <NavLink to="/game" className="game-nav">
+                <button disabled={!this.state.player}>PLAY GAME</button>
+              </NavLink>
             </NavLink>
           </form>
-          <h1>World of Ghibli</h1>  
+          <h1>World of Ghibli</h1>
         </nav>
-        <Route exact path='/' render={() => <FilmsDisplay films={this.props.films}/>} />
-        <Route exact path='/game' render={() => <GameDisplay characters={this.props.characters} player={this.props.player}/>} /> 
+        <Route
+          exact
+          path="/"
+          render={() => (
+            <section class="section_films_display">
+              <FilmsDisplay films={this.props.films} />
+            </section>
+          )}
+        />
+        <Route
+          exact
+          path="/game"
+          render={() => (
+            <section class="section_game_display">
+            <GameDisplay
+              characters={this.props.characters}
+              player={this.props.player}
+            />
+            </section>
+          )}
+        />
         <footer></footer>
-      </main> 
-    )
+      </main>
+    );
   }
 }
 
