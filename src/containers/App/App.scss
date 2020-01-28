@@ -52,14 +52,26 @@ nav {
 
 input,
 button {
-  height: 30px;
+  height: 30.9px;
   font-family: 'Gayathri', sans-serif;
   font-weight: bold;
-  margin: 10px;
+  padding-top: 5px;
 }
 
-button {
-  width: 60px;
+.btn_home {
+  border-radius: 3px;
+  width: 76px;
+}
+
+.input {
+  border: none;
+  height: 24px;
+  border-radius: 3px 0px 0px 3px;
+  padding-left: 15px;
+}
+
+.btn_play {
+  border-radius: 0px 3px 3px 0px;
 }
 
 form {

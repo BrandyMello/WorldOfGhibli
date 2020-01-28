@@ -50,10 +50,10 @@ export class App extends Component {
       <main>
         <nav className="nav">
           <NavLink to="/" className="home-nav">
-            <button>HOME</button>
+            <button class="btn_home">HOME</button>
           </NavLink>
           <form className="enter-game">
-            <input
+            <input class="input"
               placeholder="player's name: "
               name="player"
               value={this.state.player}
@@ -61,7 +61,9 @@ export class App extends Component {
             ></input>
             <NavLink to="/" onClick={this.declarePlayer}>
               <NavLink to="/game" className="game-nav">
-                <button disabled={!this.state.player}>PLAY GAME</button>
+                <button disabled={!this.state.player} class="btn_play">
+                  PLAY GAME
+                </button>
               </NavLink>
             </NavLink>
           </form>
@@ -81,10 +83,10 @@ export class App extends Component {
           path="/game"
           render={() => (
             <section class="section_game_display">
-            <GameDisplay
-              characters={this.props.characters}
-              player={this.props.player}
-            />
+              <GameDisplay
+                characters={this.props.characters}
+                player={this.props.player}
+              />
             </section>
           )}
         />
