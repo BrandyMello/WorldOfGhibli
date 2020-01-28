@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import { storeFilms, storeCharacters, storeCharNames, setCurrentPlayer } from '../../actions';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
+import { IoIosArrowForward } from 'react-icons/io';
 
 export class App extends Component {
   constructor() {
@@ -75,6 +76,7 @@ export class App extends Component {
           render={() => (
             <section class="section_films_display">
               <FilmsDisplay films={this.props.films} />
+              <IoIosArrowForward class="arrow"/>
             </section>
           )}
         />
